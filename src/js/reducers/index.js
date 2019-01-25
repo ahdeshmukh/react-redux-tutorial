@@ -1,16 +1,10 @@
-import { ADD_ARTICLE } from "../constants/action-types";
+// this helped - https://stackoverflow.com/questions/35402389/combinereducers-causes-code-to-break
 
-const initialState = {
-    articles: []
-};
+import { combineReducers } from 'redux';
+import addArticleReducer from './add-article';
 
-function rootReducer(state = initialState, action) {
-    if (action.type === ADD_ARTICLE) {
-        return Object.assign({}, state, {
-            articles: state.articles.concat(action.payload)
-        });
-    }
-    return state;
-};
+const rootReducer = combineReducers({
+    addArticleReducer
+});
 
 export default rootReducer;
