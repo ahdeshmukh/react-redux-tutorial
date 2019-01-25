@@ -10,7 +10,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 class AddArticleConnectedForm extends Component {
-  constructor() {
+    constructor() {
         super();
         this.state = {
             title: ""
