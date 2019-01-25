@@ -5,7 +5,7 @@ const mapStateToProps = state => {
   return { articles: state.articleReducer.articles };
 };
 
-const ConnectedList = ({ articles }) => (
+const ArticleConnectedList = ({ articles }) => (
   <ul className="list-group list-group-flush">
     {articles.map(el => (
       <li className="list-group-item" key={el.id}>
@@ -15,6 +15,6 @@ const ConnectedList = ({ articles }) => (
   </ul>
 );
 
-const List = connect(mapStateToProps)(ConnectedList);
+const ArticleList = connect(mapStateToProps)(ArticleConnectedList);
 
-export default List;
+export default ArticleList;
