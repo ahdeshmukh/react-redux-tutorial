@@ -21,7 +21,7 @@ class RemoveTaskConnected extends Component {
 
     render() {
         return (
-            <button onClick={this.removeTask}>X</button>
+            <button className="btn btn-danger" onClick={this.removeTask}>Remove</button>
         );
     }
 }

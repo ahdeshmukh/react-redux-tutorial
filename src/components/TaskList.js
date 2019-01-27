@@ -10,8 +10,8 @@ const ConnectedTaskList = ({ tasks }) => (
   <ul className="list-group list-group-flush">
     {tasks.map(el => (
       <li className="list-group-item" key={el.id}>
-        {el.title}
-        <RemoveTask taskId={el.id} />
+        <div className="float-left">{el.title}</div>
+        <div className="float-right"><RemoveTask taskId={el.id} /></div>
       </li>
     ))}
   </ul>
