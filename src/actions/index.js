@@ -1,9 +1,9 @@
-import { ADD_ARTICLE, REMOVE_ARTICLE } from "../constants/action-types";
+import { ADD_TASK, REMOVE_TASK } from "../constants/action-types";
 
-export function addArticle(article) {
-    return { type: ADD_ARTICLE, article }
+export function addTask(task) {
+    return { type: ADD_TASK, task }
 };
 
-export function removeArticle(articleId) {
-    return { type: REMOVE_ARTICLE, articleId }
+export function removeTask(taskId) {
+    return { type: REMOVE_TASK, taskId }
 };

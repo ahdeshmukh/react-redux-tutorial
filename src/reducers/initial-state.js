@@ -1,5 +1,5 @@
 const initialState = {
-    articles: []
+    tasks: []
 };
 
 export default initialState;

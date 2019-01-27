@@ -1,18 +1,18 @@
 import React from 'react';
-import ArticleList from './components/ArticleList';
-import AddArticle from './components/AddArticleForm';
-import ArticleCount from './components/ArticleCount';
+import TaskList from './components/TaskList';
+import AddTaskForm from './components/AddTaskForm';
+import TaskCount from './components/TaskCount';
 
 const App = () => (
   <div className="row mt-5">
-    <ArticleCount />
+    <TaskCount />
     <div className="col-md-4 offset-md-1">
-      <h2>Articles</h2>
-      <ArticleList />
+      <h2>Todos</h2>
+      <TaskList />
     </div>
     <div className="col-md-4 offset-md-1">
-      <h2>Add a new article</h2>
-      <AddArticle />
+      <h2>Add a new task</h2>
+      <AddTaskForm />
     </div>
   </div>
 );

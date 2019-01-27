@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid";
-import { addArticle } from "../actions/index";
+import { addTask } from "../actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    addArticleForm: article => dispatch(addArticle(article))
+    addTask: task => dispatch(addTask(task))
   };
 }
 
-class AddArticleConnectedForm extends Component {
+class AddTaskConnectedForm extends Component {
     constructor() {
         super();
         this.state = {
@@ -27,8 +27,8 @@ class AddArticleConnectedForm extends Component {
         event.preventDefault();
         const { title } = this.state;
         const id = uuidv1();
-        this.props.addArticleForm({ title, id });
-        //this.props.dispatch(addArticle({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
+        this.props.addTask({ title, id });
+        //this.props.dispatch(addTask({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
         this.setState({ title: "" });
     }
     
@@ -49,6 +49,6 @@ class AddArticleConnectedForm extends Component {
 
 }
 
-const AddArticleForm = connect(null, mapDispatchToProps)(AddArticleConnectedForm);
+const AddTaskForm = connect(null, mapDispatchToProps)(AddTaskConnectedForm);
 
-export default AddArticleForm;
+export default AddTaskForm;
