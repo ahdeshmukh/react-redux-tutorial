@@ -3,6 +3,9 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from "./store";
+
+import 'bootstrap/dist/css/bootstrap.css';
+
 import App from "./App.js";
 
 render(
