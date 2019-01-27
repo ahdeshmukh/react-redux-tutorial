@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid";
-import { addTask } from "../actions";
+import { addTask } from "../actions/task";
 
 function mapDispatchToProps(dispatch) {
   return {

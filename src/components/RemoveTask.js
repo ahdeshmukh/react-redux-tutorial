@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeTask } from "../actions";
+import { removeTask } from "../actions/task";
 
 const mapDispatchToProps = (dispatch) => {
     return {
