@@ -4,6 +4,8 @@ import AddTaskForm from './components/AddTaskForm';
 import TaskCount from './components/TaskCount';
 import ClearState from './components/ClearState';
 
+import './App.css';
+
 const App = () => (
   <div className="container">
     <div className="row mt-5"><TaskCount /></div>

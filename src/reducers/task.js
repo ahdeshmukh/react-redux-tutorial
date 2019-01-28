@@ -1,4 +1,9 @@
-import { ADD_TASK, REMOVE_TASK, REMOVE_ALL_TASKS } from "../constants/action-types";
+import { 
+    ADD_TASK,
+    REMOVE_TASK,
+    REMOVE_ALL_TASKS,
+    COMPLETE_TASK 
+} from "../constants/action-types";
 import initialState from "./initial-state"
 
 export const taskReducer = (state = initialState, action) => {
@@ -12,6 +17,13 @@ export const taskReducer = (state = initialState, action) => {
             return Object.assign({}, state, {tasks: state.tasks.filter((task) => {return task.id !== action.taskId})});
         case REMOVE_ALL_TASKS:
             return Object.assign({}, state, {tasks: []});
+        case COMPLETE_TASK:
+            return { 
+                ...state, 
+                tasks: state.tasks.map(
+                    (task) => task.id === action.taskId ? {...task, completed: true} : task
+                )
+            }
         default:
             return state;
     }
