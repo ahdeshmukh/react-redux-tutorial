@@ -2,6 +2,7 @@ import React from 'react';
 import TaskList from './components/TaskList';
 import AddTaskForm from './components/AddTaskForm';
 import TaskCount from './components/TaskCount';
+import ClearState from './components/ClearState';
 
 const App = () => (
   <div className="container">
@@ -16,6 +17,7 @@ const App = () => (
         <TaskList />
       </div>
     </div>
+    <ClearState />
   </div>
 );
 

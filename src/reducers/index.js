@@ -2,8 +2,10 @@
 
 import { combineReducers } from 'redux';
 import { taskReducer } from './task';
+import { clearStateReducer } from './clearstate';
 
 const rootReducer = combineReducers({
+    clearStateReducer,
     taskReducer
 });
 
