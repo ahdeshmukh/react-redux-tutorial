@@ -18,17 +18,17 @@ class RemoveTaskConnected extends Component {
 
     removeTask() {
         //this.props.dispatch(removeArticle(this.props.taskId));
-        this.props.removeTask(this.props.taskId);
+        this.props.removeTask(this.props.task.id);
     }
 
     completeTask() {
-        this.props.completeTask(this.props.taskId);
+        this.props.completeTask(this.props.task.id);
     }
 
     render() {
         return (
             <div>
-                <button className="btn btn-success task-action-btn" onClick={this.completeTask}>Complete</button>
+                <button disabled={this.props.task.completed} className="btn btn-warning task-action-btn" onClick={this.completeTask}>Complete</button>
                 <button className="btn btn-danger task-action-btn" onClick={this.removeTask}>Remove</button>
             </div>
         );
