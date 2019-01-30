@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import RemoveTask from "./RemoveTask";
+import TaskActions from "./TaskActions";
 
 const mapStateToProps = state => {
   return { tasks: state.taskReducer.tasks };
@@ -11,7 +11,7 @@ const ConnectedTaskList = ({ tasks }) => (
     {tasks.map(task => (
       <li className="list-group-item" key={task.id}>
         <div className="float-left">{task.title}</div>
-        <div className="float-right"><RemoveTask task={task} /></div>
+        <div className="float-right"><TaskActions task={task} /></div>
       </li>
     ))}
   </ul>
