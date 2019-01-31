@@ -19,7 +19,7 @@ class ReactSpinner extends React.Component {
           css={override}
           sizeUnit={"px"}
           size={15}
-          color={'#123abc'}
+          color={'#000000'}
           loading={this.props.loading}
         />
       </div> 

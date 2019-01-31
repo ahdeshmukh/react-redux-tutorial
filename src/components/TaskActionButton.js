@@ -32,8 +32,7 @@ class TaskActionButton extends Component {
             <button 
                 disabled={this.props.disabled || this.state.inProgess} 
                 className={"btn task-action-btn " + this.props.btnClass} 
-                onClick={this.taskButtonClick}>{btnValue}
-            </button>
+                onClick={this.taskButtonClick}>{btnValue}</button>
         );
     }
 }

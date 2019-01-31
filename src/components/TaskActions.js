@@ -38,7 +38,7 @@ class TaskActionsConnected extends Component {
     render() {
         return (
             <div>
-                <TaskActionButton task={this.props.task} btnClass="btn-warning" btnTxt="Complete" onClick={this.completeTask} disabled={this.props.task.completed}/>
+                <TaskActionButton task={this.props.task} btnClass="btn-warning" btnTxt="Completed" onClick={this.completeTask} disabled={this.props.task.completed}/>
                 <TaskActionButton task={this.props.task} btnClass="btn-danger" btnTxt="Remove" onClick={this.removeTask} />
             </div>
         );

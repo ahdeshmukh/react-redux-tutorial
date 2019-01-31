@@ -21,7 +21,7 @@ export const taskReducer = (state = initialState, action) => {
             return { 
                 ...state, 
                 tasks: state.tasks.map(
-                    (task) => task.id === action.taskId ? {...task, completed: true} : task
+                    (task) => task.id === action.taskId ? {...task, new: false, completed: true} : task
                 )
             }
         default:
