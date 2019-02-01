@@ -8,7 +8,12 @@ import './App.css';
 
 const App = () => (
   <div className="container">
-    <div className="row mt-5"><TaskCount /></div>
+    <div className="row mt-5">
+      <TaskCount />
+      <div className="col-md-4">
+        <div className="float-right"><ClearState /></div>
+      </div>
+    </div>
     <div className="row mt-5">
       <div className="col-md-4">
         <h2>Add a new task</h2>
@@ -19,7 +24,6 @@ const App = () => (
         <TaskList />
       </div>
     </div>
-    <ClearState />
   </div>
 );
 

@@ -20,7 +20,7 @@ class ClearStateConnected extends Component {
 
     render() {
         return (
-            <button onClick={this.clearState}>Clear State</button>
+            <button className="btn btn-danger btn-lg" onClick={this.clearState}>Clear State</button>
         );
     }
 }
