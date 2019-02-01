@@ -4,6 +4,8 @@ import ReactSpinner from './ReactSpinner';
 //import { removeTask, completeTask } from "../actions/task";
 
 class TaskActionButton extends Component {
+    _isMounted = false;
+    
     constructor(props) {
         super(props);
         this.state = {"inProgess": false};
@@ -16,11 +18,21 @@ class TaskActionButton extends Component {
         setTimeout(
             function() {
                 this.props.onClick(this.props.task);
-                this.setState({"inProgess": false});
+                if(this._isMounted) {
+                    this.setState({"inProgess": false});
+                }
             }
             .bind(this),
             3000
         );
+    }
+
+    componentDidMount() {
+        this._isMounted = true;
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render() {
