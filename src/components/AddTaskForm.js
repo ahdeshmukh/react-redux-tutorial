@@ -31,30 +31,16 @@ class AddTaskConnectedForm extends Component {
         this.props.addTask({ title, id, "new": true });
         //this.props.dispatch(addTask({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
         this.setState({ title: "" });
-
-        /*setTimeout(
-            function() {
-                this.props.addTask({ title, id, "new": true });
-                //this.props.dispatch(addTask({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
-                this.setState({ title: "" });
-            }
-            .bind(this),
-            3000
-        );*/
-
     }
     
     render() {
         const { title } = this.state;
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange} />
                 </div>
-                {/* <button type="submit" className="btn btn-success btn-lg">
-                    SAVE
-                </button> */}
                 <Button btnClass="btn-success btn-lg" btnTxt="SAVE" onClick={this.handleSubmit} />
             </form>
         );

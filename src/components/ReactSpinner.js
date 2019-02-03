@@ -5,12 +5,6 @@ import { ClipLoader } from 'react-spinners';
 // Another way to import
 //import ClipLoader from 'react-spinners/ClipLoader';
  
-/*const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-`;*/
- 
 class ReactSpinner extends React.Component {
   render() {
     return (

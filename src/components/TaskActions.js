@@ -26,15 +26,6 @@ class TaskActionsConnected extends Component {
         this.props.completeTask(this.props.task.id);
     }
 
-    /*render() {
-        return (
-            <div>
-                <button disabled={this.props.task.completed} className="btn btn-warning task-action-btn" onClick={this.completeTask}>Complete</button>
-                <button className="btn btn-danger task-action-btn" onClick={this.removeTask}>Remove</button>
-            </div>
-        );
-    }*/
-
     render() {
         return (
             <div>
