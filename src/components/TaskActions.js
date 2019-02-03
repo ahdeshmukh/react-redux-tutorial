@@ -17,13 +17,13 @@ class TaskActionsConnected extends Component {
         this.completeTask = this.completeTask.bind(this);
     }
 
-    removeTask(task) {
+    removeTask() {
         //this.props.dispatch(removeArticle(this.props.taskId));
-        this.props.removeTask(task.id);
+        this.props.removeTask(this.props.task.id);
     }
 
-    completeTask(task) {
-        this.props.completeTask(task.id);
+    completeTask() {
+        this.props.completeTask(this.props.task.id);
     }
 
     /*render() {

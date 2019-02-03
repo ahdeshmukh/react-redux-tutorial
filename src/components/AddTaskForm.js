@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid";
 import { addTask } from "../actions/task";
+import Button from "./Button";
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -23,13 +24,24 @@ class AddTaskConnectedForm extends Component {
         this.setState({ [event.target.id]: event.target.value });
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit() {
+        //event.preventDefault();
         const { title } = this.state;
         const id = uuidv1();
         this.props.addTask({ title, id, "new": true });
         //this.props.dispatch(addTask({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
         this.setState({ title: "" });
+
+        /*setTimeout(
+            function() {
+                this.props.addTask({ title, id, "new": true });
+                //this.props.dispatch(addTask({ title, id })); //this works too, since dispatch is a prop. if you choose to use this remove mapDispatchToProps
+                this.setState({ title: "" });
+            }
+            .bind(this),
+            3000
+        );*/
+
     }
     
     render() {
@@ -40,9 +52,10 @@ class AddTaskConnectedForm extends Component {
                     <label htmlFor="title">Title</label>
                     <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange} />
                 </div>
-                <button type="submit" className="btn btn-success btn-lg">
+                {/* <button type="submit" className="btn btn-success btn-lg">
                     SAVE
-                </button>
+                </button> */}
+                <Button btnClass="btn-success btn-lg" btnTxt="SAVE" onClick={this.handleSubmit} />
             </form>
         );
     }

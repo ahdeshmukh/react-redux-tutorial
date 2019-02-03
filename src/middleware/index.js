@@ -5,7 +5,6 @@ export const clearStateMiddleware = ({dispatch}) => {
         return function(action) {
             if (action.type === CLEAR_STATE) {
                 return dispatch({ type: REMOVE_ALL_TASKS });
-                //return dispatch({ type: "REMOVE_ALL_TASKS" });
             }
             return next(action);
         };
