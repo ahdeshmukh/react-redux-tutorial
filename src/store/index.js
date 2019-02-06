@@ -7,7 +7,7 @@ import { clearStateMiddleware } from "../middleware";
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const persistConfig = {
-    key: 'root',
+    key: 'todosListRoot',
     storage
 };
 
