@@ -15,8 +15,9 @@ class ClearStateConnected extends Component {
     }
 
     clearState() {
-        this.props.dispatch(clearState());
-        persistor.purge();
+        this.props.dispatch(clearState()).then(() => {
+            persistor.purge();
+        });
     }
 
     render() {
