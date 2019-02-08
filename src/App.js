@@ -1,7 +1,7 @@
 import React from 'react';
-import TaskList from './components/TaskList';
-import AddTaskForm from './components/AddTaskForm';
-import TaskCount from './components/TaskCount';
+import TaskList from './components/task/TaskList';
+import AddTaskForm from './components/task/AddTaskForm';
+import TaskCount from './components/task/TaskCount';
 import ClearState from './components/ClearState';
 
 import './App.css';
