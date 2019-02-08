@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import TaskActions from "./TaskActions";
+import TaskActionButton from "./TaskActionButton";
 
 const mapStateToProps = state => {
   return { tasks: state.taskReducer.tasks };
@@ -12,7 +12,8 @@ const ConnectedTaskList = ({ tasks }) => (
       <li className="list-group-item" key={task.id}>
         <div className="float-left">{task.title}</div>
         <div className="float-right">
-          <TaskActions task={task} />
+          <TaskActionButton task={task} btnClass="btn-warning" btnTxt="Completed" action="completeTask" disabled={task.completed}/>
+          <TaskActionButton task={task} btnClass="btn-danger" btnTxt="Remove" action="removeTask" />
         </div>
       </li>
     ))}
