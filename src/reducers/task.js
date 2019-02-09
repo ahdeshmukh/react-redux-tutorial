@@ -4,7 +4,8 @@ import {
     REMOVE_ALL_TASKS,
     COMPLETE_TASK 
 } from "../constants/action-types";
-import initialState from "./initial-state"
+
+const initialState = {"tasks": []};
 
 export const taskReducer = (state = initialState, action) => {
     switch(action.type) {
