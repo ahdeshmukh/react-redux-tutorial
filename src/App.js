@@ -3,11 +3,15 @@ import TaskList from './components/task/TaskList';
 import AddTaskForm from './components/task/AddTaskForm';
 import TaskCount from './components/task/TaskCount';
 import ClearState from './components/ClearState';
+import User from './components/User';
 
 import './App.css';
 
 const App = () => (
   <div className="container">
+    <div className="row mt-5">
+      <User />
+    </div>
     <div className="row mt-5">
       <TaskCount />
       <div className="col-md-4">

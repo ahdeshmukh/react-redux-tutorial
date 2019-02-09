@@ -3,10 +3,12 @@
 import { combineReducers } from 'redux';
 import { taskReducer } from './task';
 import { clearStateReducer } from './clearstate';
+import { userReducer } from './user';
 
 const rootReducer = combineReducers({
     clearStateReducer,
-    taskReducer
+    taskReducer,
+    userReducer
 });
 
 export default rootReducer;

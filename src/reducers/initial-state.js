@@ -1,5 +1,6 @@
 const initialState = {
-    tasks: []
+    tasks: [],
+    user: {}
 };
 
 export default initialState;
