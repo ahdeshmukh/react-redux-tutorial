@@ -41,7 +41,7 @@ class AddTaskConnectedForm extends Component {
                     <label htmlFor="title">Title</label>
                     <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange} />
                 </div>
-                <Button btnClass="btn-success btn-lg" btnTxt="SAVE" onClick={this.handleSubmit} />
+                <Button btnClass="btn-success" btnTxt="Save" onClick={this.handleSubmit} />
             </form>
         );
     }
