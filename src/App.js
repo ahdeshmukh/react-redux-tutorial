@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskList from './components/task/TaskList';
+import TaskListHeader from './components/task/TaskListHeader';
 import AddTaskForm from './components/task/AddTaskForm';
 import TaskCount from './components/task/TaskCount';
 import ClearState from './components/ClearState';
@@ -24,7 +25,7 @@ const App = () => (
         <AddTaskForm />
       </div>
       <div className="col-md-8">
-        <h2>Todos</h2>
+        <TaskListHeader />
         <TaskList />
       </div>
     </div>
