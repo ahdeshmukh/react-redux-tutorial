@@ -23,9 +23,13 @@ class ClearStateConnected extends Component {
     }
 
     render() {
-        let disabled = !(this.props.tasks.length || (this.props.user && this.props.user.name)) ? true : false;
+        let visible = (this.props.tasks.length || (this.props.user && this.props.user.name)) ? true : false;
+        if(!visible) {
+            // only show if any state is saved
+            return (null);
+        }
         return (
-            <Button btnTxt="Clear State" btnClass="btn-danger btn-lg" disabled={disabled} onClick={this.clearState} />
+            <Button btnTxt="Clear State" btnClass="btn-danger btn-lg" onClick={this.clearState} />
         );
     }
 }
