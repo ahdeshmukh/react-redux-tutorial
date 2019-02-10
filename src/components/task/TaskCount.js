@@ -18,10 +18,10 @@ const mapStateToProps = state => {
 
 const ConnectedTaskCount = ({ newTasks, completedTasks }) => (
   <React.Fragment>
-    <div className="col-md-4">
+    <div className="col-md-6">
       <CountCircle count={newTasks.length} style={{"background":"#dc3545"}} text="NEW" />
     </div>
-    <div className="col-md-4">
+    <div className="col-md-6">
     <CountCircle count={completedTasks.length} style={{"background":"#ffc107"}} text="COMPLETED" />
     </div>
   </React.Fragment>
