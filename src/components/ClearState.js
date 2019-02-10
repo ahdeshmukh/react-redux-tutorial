@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 import { clearState } from "../actions/clearstate";
 
 const mapStateToProps = state => {
-    return { tasks: state.taskReducer.tasks };
+    return { 
+        tasks: state.taskReducer.tasks, 
+        user: state.userReducer.user 
+    };
   };
 
 class ClearStateConnected extends Component {
@@ -20,8 +23,9 @@ class ClearStateConnected extends Component {
     }
 
     render() {
+        let disabled = !(this.props.tasks.length || (this.props.user && this.props.user.name)) ? true : false;
         return (
-            <Button btnTxt="Clear State" btnClass="btn-danger btn-lg" disabled={!this.props.tasks.length} onClick={this.clearState} />
+            <Button btnTxt="Clear State" btnClass="btn-danger btn-lg" disabled={disabled} onClick={this.clearState} />
         );
     }
 }
