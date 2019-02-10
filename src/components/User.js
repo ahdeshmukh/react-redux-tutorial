@@ -44,7 +44,7 @@ class UserConnected extends Component {
 
     handleSubmit() {
         this.props.addSessionUser({"name":this.state.userName});
-        //this.setState({ userName: "" });
+        this.setState({ userName: "" });
     }
 }
 
