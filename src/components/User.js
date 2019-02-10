@@ -3,11 +3,15 @@ import Button from "./Button";
 import { connect } from "react-redux";
 import { addSessionUser } from "../actions/user";
 
-function mapDispatchToProps(dispatch) {
+const mapStateToProps = state => {
+    return { user: state.userReducer.user };
+}
+
+const mapDispatchToProps = (dispatch) => {
     return {
       addSessionUser: user => dispatch(addSessionUser(user))
     };
-  }
+}
 
 class UserConnected extends Component {
     constructor() {
@@ -20,6 +24,9 @@ class UserConnected extends Component {
     }
     
     render() {
+        if(this.props.user && this.props.user.name) {
+            return (<h1>Hello {this.props.user.name}</h1>);
+        }
         return (
             <form>
                 <div className="form-group">
@@ -37,9 +44,9 @@ class UserConnected extends Component {
 
     handleSubmit() {
         this.props.addSessionUser({"name":this.state.userName});
-        this.setState({ userName: "" });
+        //this.setState({ userName: "" });
     }
 }
 
-const User = connect(null, mapDispatchToProps)(UserConnected);
+const User = connect(mapStateToProps, mapDispatchToProps)(UserConnected);
 export default User;
