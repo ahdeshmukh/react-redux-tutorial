@@ -41,7 +41,7 @@ class Button extends Component {
            btnValue = <ReactSpinner loading={this.state.inProgess} />
         }
         return (
-            <button 
+            <button type="button"
                 disabled={this.props.disabled || this.state.inProgess} 
                 className={"btn task-action-btn " + this.props.btnClass} 
                 onClick={this.buttonClick}>{btnValue}</button>
