@@ -1,14 +1,14 @@
-import { REMOVE_ALL_TASKS, CLEAR_STATE, REMOVE_SESSION_USER } from "../constants/action-types"
+import { CLEAR_STATE } from "../constants/action-types"
+import { removeSessionUser } from "../actions/user";
+import { removeAllTasks } from "../actions/task";
 
 export const clearStateMiddleware = ({dispatch}) => {
     return function(next) {
         return function(action) {
             if (action.type === CLEAR_STATE) {
-                //todo: try to invoke action creator
-                const actions = [REMOVE_ALL_TASKS, REMOVE_SESSION_USER];
-                //return dispatch({ type: REMOVE_ALL_TASKS });
-                actions.map(action => {
-                    return dispatch({type: action});
+                const actionCreators = [removeSessionUser, removeAllTasks];
+                actionCreators.map(actionCreator => {
+                    return dispatch(actionCreator());
                 })
             }
             return next(action);
