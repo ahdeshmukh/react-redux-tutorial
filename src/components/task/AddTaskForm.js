@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import uuidv1 from "uuid";
 import { addTask } from "../../actions/task";
 import Button from "../Button";
+import TextBox from "../TextBox";
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -38,8 +39,8 @@ class AddTaskConnectedForm extends Component {
         return (
             <form>
                 <div className="form-group">
-                    <label htmlFor="title">Title</label>
-                    <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange} />
+                    <TextBox id="title" value={title} onChange={this.handleChange} label="Title" />
+                    {/* <input type="text" className="form-control" id="title" value={title} onChange={this.handleChange} /> */}
                 </div>
                 <Button btnClass="btn-success" btnTxt="Save" onClick={this.handleSubmit} />
             </form>

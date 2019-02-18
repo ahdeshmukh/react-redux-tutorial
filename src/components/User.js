@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "./Button";
+import TextBox from "./TextBox";
 import { connect } from "react-redux";
 import { addSessionUser } from "../actions/user";
 
@@ -30,8 +31,8 @@ class UserConnected extends Component {
         return (
             <form>
                 <div className="form-group">
-                    <label htmlFor="userName">Add your name</label>
-                    <input type="text" className="form-control" id="userName" value={this.state.userName} onChange={this.handleChange} />
+                    <TextBox id="userName" value={this.state.userName} onChange={this.handleChange} label="Add your name"/>
+                    {/* <input type="text" className="form-control" id="userName" value={this.state.userName} onChange={this.handleChange} /> */}
                     <Button btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} />
                 </div>
             </form>
