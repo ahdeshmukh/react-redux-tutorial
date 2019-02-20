@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { ValidatorForm } from 'react-form-validator-core';
 import Button from "./Button";
-import TextBox from "./TextBox";
+//import TextBox from "./TextBox";
 import InputTextValidator from "../components/formValidators/InputTextValidator";
 import { connect } from "react-redux";
 import { addSessionUser } from "../actions/user";
+import { REQUIRED, REQUIRED_ERROR } from "../constants/form-validators";
 
 const mapStateToProps = state => {
     return { user: state.userReducer.user };
@@ -37,8 +38,8 @@ class UserConnected extends Component {
                     <InputTextValidator id="userName"
                 onChange={this.handleChange}
                 value={this.state.userName}
-                validators={['required']}
-                errorMessages={['This field is required']} 
+                validators={[REQUIRED]}
+                errorMessages={[REQUIRED_ERROR]} 
             />
                     {/* <input type="text" className="form-control" id="userName" value={this.state.userName} onChange={this.handleChange} /> */}
                     {/* <Button btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} /> */}
