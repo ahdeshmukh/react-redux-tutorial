@@ -38,7 +38,7 @@ class UserConnected extends Component {
                 onChange={this.handleChange}
                 value={this.state.userName}
                 validators={['required']}
-                errorMessages={['this field is required']} 
+                errorMessages={['This field is required']} 
             />
                     {/* <input type="text" className="form-control" id="userName" value={this.state.userName} onChange={this.handleChange} /> */}
                     {/* <Button btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} /> */}

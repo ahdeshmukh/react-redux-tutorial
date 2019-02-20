@@ -17,7 +17,7 @@ class InputTextValidator extends ValidatorComponent {
                     {...rest}
                     ref={(r) => { this.input = r; }}
                     onChange={this.handleChange} 
-                    className="form-control"
+                    className={"form-control" + (!this.state.isValid ? ' is-invalid' : '')}
                 />
                 {this.errorText()}
             </div>
