@@ -39,6 +39,7 @@ class UserConnected extends Component {
                         value={this.state.userName}
                         validators={[REQUIRED]}
                         errorMessages={[REQUIRED_ERROR]} 
+                        labelText="Enter your name"
                     />
                     <Button type="submit" btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} />
                 </div>

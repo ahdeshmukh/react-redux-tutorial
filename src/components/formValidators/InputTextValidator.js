@@ -12,7 +12,11 @@ class InputTextValidator extends ValidatorComponent {
         const { errorMessages, validators, requiredError, validatorListener, ...rest } = this.props;
  
         return (
-            <div className="form-group has-warning"> 
+            <div className="form-group has-warning">
+                {rest.labelText &&
+                    <label for={rest.id}>{rest.labelText}</label>
+                }
+                
                 <input
                     {...rest}
                     ref={(r) => { this.input = r; }}
