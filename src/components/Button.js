@@ -37,8 +37,19 @@ class Button extends Component {
 
     render() {
         let btnValue = this.props.btnTxt;
+        const btnType = this.props.type;
         if(this.state.inProgess) {
-           btnValue = <ReactSpinner loading={this.state.inProgess} />
+            btnValue = <ReactSpinner loading={this.state.inProgess} />
+        }
+        if(btnType === 'submit') {
+            return (
+                <input 
+                    type="submit" 
+                    value={btnValue} 
+                    disabled={this.props.disabled || this.state.inProgess}  
+                    className={"btn task-action-btn " + this.props.btnClass} 
+                />
+            );
         }
         return (
             <button type="button"

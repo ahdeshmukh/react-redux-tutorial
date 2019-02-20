@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { ValidatorForm } from 'react-form-validator-core';
 import Button from "./Button";
 import TextBox from "./TextBox";
+import InputTextValidator from "../components/formValidators/InputTextValidator";
 import { connect } from "react-redux";
 import { addSessionUser } from "../actions/user";
 
@@ -29,13 +31,21 @@ class UserConnected extends Component {
             return (<h1>Hello {this.props.user.name}</h1>);
         }
         return (
-            <form>
+            <ValidatorForm ref="form" onSubmit={this.handleSubmit} >
                 <div className="form-group">
-                    <TextBox id="userName" value={this.state.userName} onChange={this.handleChange} label="Add your name"/>
+                    {/* <TextBox id="userName" value={this.state.userName} onChange={this.handleChange} label="Add your name"/> */}
+                    <InputTextValidator id="userName"
+                onChange={this.handleChange}
+                value={this.state.userName}
+                validators={['required']}
+                errorMessages={['this field is required']} 
+            />
                     {/* <input type="text" className="form-control" id="userName" value={this.state.userName} onChange={this.handleChange} /> */}
-                    <Button btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} />
+                    {/* <Button btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} /> */}
+                    {/* <input type="submit" value="Submit"></input> */}
+                    <Button type="submit" btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} />
                 </div>
-            </form>
+            </ValidatorForm>
         );
     }
 
