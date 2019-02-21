@@ -13,8 +13,8 @@ class InputTextValidator extends ValidatorComponent {
  
         return (
             <div className="form-group has-warning">
-                {rest.labelText &&
-                    <label for={rest.id}>{rest.labelText}</label>
+                {rest.labeltext &&
+                    <label htmlFor={rest.id}>{rest.labeltext}</label>
                 }
                 
                 <input
