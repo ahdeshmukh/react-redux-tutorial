@@ -41,7 +41,7 @@ class UserConnected extends Component {
                         errorMessages={[REQUIRED_ERROR]} 
                         labelText="Enter your name"
                     />
-                    <Button type="submit" btnClass="btn-success" btnTxt="Submit" onClick={this.handleSubmit} />
+                    <Button type="submit" btnClass="btn-success" btnTxt="Submit" />
                 </div>
             </ValidatorForm>
         );
